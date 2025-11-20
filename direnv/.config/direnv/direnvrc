@@ -1,0 +1,22 @@
+dotenv_context() {
+   context=${1-}
+   context_file="${PWD}/.envrc.context"
+   if [[ -f "$context_file" ]]; then
+     context=$(< "$context_file" )
+   else
+       echo "$context" > "$context_file"
+   fi
+   watch_file "$context_file"
+
+   export DIRENV_CONTEXT="$context"
+
+   context_env_file=".env${context:+.$context}"
+   if [[ -f "$context_env_file" ]]; then
+       log_status "applying $context_env_file"
+       dotenv "$context_env_file"
+   else
+       log_status "context: $context_env_file missing"
+   fi
+
+   export DIRENV_ENVIRONMENT="${DIRENV_ENVIRONMENT-dev}"
+}
