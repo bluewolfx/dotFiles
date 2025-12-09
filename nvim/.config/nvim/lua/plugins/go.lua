@@ -20,6 +20,11 @@ return {
 						nilness = true,
 						unusedwrite = true,
 						useany = true,
+						unreachable = true,
+					},
+					hints = {
+						assignVariableTyoes = true,
+						functionTypeParameters = true,
 					},
 					staticcheck = true,
 				},
