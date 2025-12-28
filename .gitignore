@@ -32,3 +32,6 @@ go.work.sum
 # .vscode/
 nvim/.config/nvim/lazy/
 kitty/.config/kitty_search/
+
+zsh/.config/zsh/.zsh_secrets
+zsh/.config/zsh/.zsh_work
