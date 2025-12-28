@@ -4,18 +4,17 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Change caps_lock to Shortcat",
                         "manipulators": [
                             {
+                                "description": "Change caps_lock to command+control+option+spacebar.",
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
                                     {
-                                        "hold_down_milliseconds": 150,
                                         "key_code": "spacebar",
-                                        "modifiers": ["left_control", "left_option", "left_command"]
+                                        "modifiers": ["left_command", "left_control", "left_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -31,18 +30,7 @@
                         "product_id": 60205,
                         "vendor_id": 1240
                     },
-                    "ignore_vendor_events": true,
-                    "manipulate_caps_lock_led": false
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 60205,
-                        "vendor_id": 1240
-                    },
-                    "ignore": false,
-                    "ignore_vendor_events": true,
+                    "ignore": true,
                     "manipulate_caps_lock_led": false
                 }
             ],
