@@ -1,6 +1,7 @@
 return {
 	"ray-x/go.nvim",
-	dependencies = { -- optional packages
+	enabled = vim.fn.has("win32") == 0,
+	dependencies = {
 		"ray-x/guihua.lua",
 		"neovim/nvim-lspconfig",
 		"nvim-treesitter/nvim-treesitter",

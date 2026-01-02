@@ -44,4 +44,7 @@ config.window_background_opacity = 1.0
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 
+-- Set PowerShell 7 as default shell
+config.default_prog = { 'pwsh.exe' }
+
 return config

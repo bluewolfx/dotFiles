@@ -1,6 +1,7 @@
 return {
 	{
 		"zbirenbaum/copilot.lua",
+		enabled = vim.fn.has("win32") == 0,
 		cmd = "Copilot",
 		event = "InsertEnter",
 		opts = {
@@ -24,12 +25,13 @@ return {
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
+		enabled = vim.fn.has("win32") == 0,
 		dependencies = {
 			{ "nvim-telescope/telescope.nvim" },
 			{ "zbirenbaum/copilot.lua" },
-			{ "nvim-lua/plenary.nvim",        branch = "master" }, -- for curl, log and async functions
+			{ "nvim-lua/plenary.nvim",        branch = "master" },
 		},
-		build = "make tiktoken",                  -- Only on MacOS or Linux
+		build = "make tiktoken",
 		cmd = {
 			"CopilotChat",
 			"CopilotChatOpen",

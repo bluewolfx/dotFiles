@@ -4,17 +4,21 @@ return {
 	opts = function()
 		local themes = require("telescope.themes")
 		local actions = require("telescope.actions")
-		return {
-			defaults = {
-				file_ignore_patterns = {},
-				hidden = true,
-				mappings = {
-					i = {
-						["œ"] = actions.send_selected_to_qflist + actions.open_qflist,
-					},
-
+		local defaults = {
+			file_ignore_patterns = {},
+			hidden = true,
+			mappings = {
+				i = {
+					["œ"] = actions.send_selected_to_qflist + actions.open_qflist,
 				},
+
 			},
+		}
+		if vim.fn.has("win32") == 1 then
+			defaults.preview = { treesitter = false }
+		end
+		return {
+			defaults = defaults,
 			extensions = {
 				["ui-select"] = {
 					themes.get_dropdown {}
@@ -65,7 +69,7 @@ return {
 		local telescope = require("telescope")
 		telescope.setup(opts)
 
-		telescope.load_extension('fzf')
+		pcall(telescope.load_extension, 'fzf')
 		telescope.load_extension("ui-select")
 		telescope.load_extension("jj")
 	end,
