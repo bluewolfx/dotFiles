@@ -6,7 +6,7 @@ return {
 			sources = {
 				files = {
 					hidden = false,
-					cmd = vim.fn.has("win32") == 0 and "fd --type f --strip-cwd-prefix" or nil,
+					cmd = vim.loop.os_uname().sysname ~= "Linux" and "fd --type f --strip-cwd-prefix" or nil,
 				},
 			},
 		},
