@@ -1,4 +1,7 @@
--- Neovim Configuration File
+if vim.fn.has("win32") == 1 then
+	vim.env.PATH = vim.env.PATH .. ";C:\\ProgramData\\chocolatey\\bin"
+end
+
 require('config.lazy')
 require('config.keymap')
 
