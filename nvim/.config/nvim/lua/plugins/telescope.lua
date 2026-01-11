@@ -1,6 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	branch = "0.1.x",
+	branch = "master",
 	opts = function()
 		local themes = require("telescope.themes")
 		local actions = require("telescope.actions")
