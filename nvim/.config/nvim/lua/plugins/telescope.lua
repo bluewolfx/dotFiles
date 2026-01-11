@@ -5,7 +5,7 @@ return {
 		local themes = require("telescope.themes")
 		local actions = require("telescope.actions")
 		local defaults = {
-			file_ignore_patterns = {},
+			file_ignore_patterns = {"^.git/", "node_modules", ".cache"},
 			hidden = true,
 			mappings = {
 				i = {

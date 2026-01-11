@@ -1,6 +1,15 @@
 return {
 	"folke/snacks.nvim",
 	opts = {
+		picker = {
+			win = { input = { keys = { ["<Esc>"] = { "close", mode = { "n", "i" } } } } },
+			sources = {
+				files = {
+					hidden = false,
+					cmd = vim.fn.has("win32") == 0 and "fd --type f --strip-cwd-prefix" or nil,
+				},
+			},
+		},
 		dashboard = {
 			width = 60,
 			pane_gap = 1,
