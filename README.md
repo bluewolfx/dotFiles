@@ -41,10 +41,22 @@ stow -d "$HOME" -D */
 ```
 
 
+### Included Configurations
+
+- `direnv` - Directory-specific environment variables
+- `karabiner` - Karabiner-Elements keyboard customization (macOS)
+- `kitty` - Kitty terminal emulator
+- `nvim` - Neovim text editor
+- `wezterm` - WezTerm terminal emulator
+- `zsh` - Zsh shell configuration
+
 ### Requirements
 
 - [GNU Stow](https://www.gnu.org/software/stow/) (for managing the dotfiles)
-- [git](https://git-scm.com/) (for the `git` directory, and for cloning this repo in the first place)
+- [git](https://git-scm.com/) (for cloning this repo)
 - [Neovim](https://neovim.io/) (for the `nvim` directory)
-- [Zsh](https://www.zsh.org/) (for the `shell` directory)
+- [Zsh](https://www.zsh.org/) (for the `zsh` directory)
+- [direnv](https://direnv.net/) (for the `direnv` directory)
+- [Kitty](https://sw.kovidgoyal.net/kitty/) or [WezTerm](https://wezfurlong.org/wezterm/) (for terminal configurations)
+- [Karabiner-Elements](https://karabiner-elements.pqrs.org/) (for the `karabiner` directory, macOS only)
 
