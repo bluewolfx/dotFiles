@@ -8,6 +8,7 @@ end
 local act = wezterm.action
 
 -- WSL setting
+config.default_domain = 'WSL:Ubuntu'
 config.default_prog = { 'wsl.exe', '-d', 'Ubuntu' }
 
 -- Nightfly color scheme
@@ -79,8 +80,11 @@ config.keys = {
 	{ key = 'RightArrow', mods = 'ALT', action = act.ActivatePaneDirection 'Right' },
 	{ key = 'UpArrow',    mods = 'ALT', action = act.ActivatePaneDirection 'Up' },
 	{ key = 'DownArrow',  mods = 'ALT', action = act.ActivatePaneDirection 'Down' },
-}
 
-config.default_domain = 'WSL:Ubuntu'
+	-- Split Panes
+	{ key = '\\',         mods = 'ALT', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+	{ key = '-',          mods = 'ALT', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
+	{ key = 'w',          mods = 'ALT', action = act.CloseCurrentPane { confirm = true } },
+}
 
 return config
