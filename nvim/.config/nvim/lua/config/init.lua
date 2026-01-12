@@ -14,5 +14,20 @@ vim.opt.scrolloff = 24
 
 vim.opt.showmode = false
 
+-- Clipboard configuration for SSH/remote sessions (Linux only)
+if vim.fn.has("unix") == 1 and vim.fn.has("mac") == 0 then
+  vim.g.clipboard = {
+    name = 'OSC 52',
+    copy = {
+      ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+      ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+    },
+    paste = {
+      ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+      ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+    },
+  }
+end
+
 -- colortheme configuration
 vim.cmd.colorscheme("nightfly")
