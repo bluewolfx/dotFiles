@@ -17,6 +17,17 @@ return {
 		if vim.fn.has("win32") == 1 then
 			defaults.preview = { treesitter = false }
 		end
+		-- Prefer fd; fallback to ripgrep if fd is not available
+		local find_cmd
+		if vim.fn.executable("fd") == 1 then
+			find_cmd = { "fd", "--type", "f", "--strip-cwd-prefix" }
+		elseif vim.fn.executable("rg") == 1 then
+			find_cmd = { "rg", "--files" }
+		end
+		if find_cmd then
+			defaults.find_command = find_cmd
+		end
+
 		return {
 			defaults = defaults,
 			extensions = {
