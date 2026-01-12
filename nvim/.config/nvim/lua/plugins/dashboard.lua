@@ -6,10 +6,20 @@ return {
 			sources = {
 				files = {
 					hidden = false,
-					cmd = vim.loop.os_uname().sysname ~= "Linux" and "fd --type f --strip-cwd-prefix" or nil,
+					cmd = (function()
+						local os = vim.loop.os_uname().sysname
+						if os == "Windows_NT" then
+							return "cmd /c dir /s /b"
+						elseif os ~= "Darwin" then
+							if vim.fn.executable("fd") == 1 then return "fd --type f" end
+							if vim.fn.executable("rg") == 1 then return "rg --files" end
+						end
+						return nil
+					end)(),
 				},
 			},
 		},
+
 		dashboard = {
 			width = 60,
 			pane_gap = 1,
