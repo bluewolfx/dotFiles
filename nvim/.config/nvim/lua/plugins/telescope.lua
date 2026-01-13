@@ -7,6 +7,18 @@ return {
 		local defaults = {
 			file_ignore_patterns = {"^.git/", "node_modules", ".cache"},
 			hidden = true,
+			vimgrep_arguments = {
+				"rg",
+				"--color=never",
+				"--no-heading",
+				"--with-filename",
+				"--line-number",
+				"--column",
+				"--smart-case",
+				"--hidden",
+				"--glob",
+				"!.git/"
+			},
 			mappings = {
 				i = {
 					["œ"] = actions.send_selected_to_qflist + actions.open_qflist,
@@ -17,12 +29,12 @@ return {
 		if vim.fn.has("win32") == 1 then
 			defaults.preview = { treesitter = false }
 		end
-		-- Prefer fd; fallback to ripgrep if fd is not available
+		-- Prefer ripgrep; fallback to fd
 		local find_cmd
-		if vim.fn.executable("fd") == 1 then
+		if vim.fn.executable("rg") == 1 then
+			find_cmd = { "rg", "--files", "--hidden", "--glob", "!.git/" }
+		elseif vim.fn.executable("fd") == 1 then
 			find_cmd = { "fd", "--type", "f", "--strip-cwd-prefix" }
-		elseif vim.fn.executable("rg") == 1 then
-			find_cmd = { "rg", "--files" }
 		end
 		if find_cmd then
 			defaults.find_command = find_cmd
