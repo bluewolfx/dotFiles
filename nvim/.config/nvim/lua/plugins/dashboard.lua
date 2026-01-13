@@ -5,7 +5,7 @@ return {
 			win = { input = { keys = { ["<Esc>"] = { "close", mode = { "n", "i" } } } } },
 			sources = {
 				files = {
-					hidden = false,
+					hidden = true,
 					cmd = (function()
 						local os = vim.loop.os_uname().sysname
 						if os == "Windows_NT" then
