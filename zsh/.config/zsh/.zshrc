@@ -79,6 +79,10 @@ alias dockerUBuild="docker-compose up -d --build"
 alias bi="brew install"
 alias ld="lazydocker"
 alias lg="lazygit"
+alias l='eza -l --icons --git --header --group-directories-first'
+alias lt='eza --tree --level=2 --icons'
+
+
 
 # OS-specific configurations
 case "$OS" in
@@ -136,3 +140,5 @@ fi
 
 [ -f $ZDOTDIR/.zsh_secrets ] && source $ZDOTDIR/.zsh_secrets
 [ -f $ZDOTDIR/.zsh_work ] && source $ZDOTDIR/.zsh_work
+
+
