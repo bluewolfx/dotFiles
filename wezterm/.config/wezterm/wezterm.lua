@@ -53,6 +53,7 @@ config.font = wezterm.font('JetBrains Mono', { weight = 'Regular' })
 config.window_background_opacity = 1.0
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
+config.enable_csi_u_key_encoding = false
 
 -- Mouse copy on select
 config.mouse_bindings = {
