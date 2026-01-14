@@ -113,6 +113,9 @@ case "$OS" in
         # Linux-specific exports
         export PATH="$PATH:/usr/local/go/bin"
         
+        # Homebrew on Linux
+        [ -d "/home/linuxbrew/.linuxbrew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        
         # Distribution-specific configurations
         case "$DISTRO" in
             ubuntu)
