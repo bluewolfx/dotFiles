@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Detect OS and distribution
 case "$OSTYPE" in
@@ -120,7 +120,7 @@ case "$OS" in
         case "$DISTRO" in
             ubuntu)
                 # Ubuntu-specific: Fix terminal colors for tmux + SSH
-                export TERM=screen-256color
+                export TERM=xterm-256color
                 export COLORTERM=truecolor
                 ;;
             *)
@@ -143,5 +143,3 @@ fi
 
 [ -f $ZDOTDIR/.zsh_secrets ] && source $ZDOTDIR/.zsh_secrets
 [ -f $ZDOTDIR/.zsh_work ] && source $ZDOTDIR/.zsh_work
-
-

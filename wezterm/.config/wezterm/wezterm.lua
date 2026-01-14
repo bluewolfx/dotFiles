@@ -10,6 +10,7 @@ local act = wezterm.action
 -- WSL setting
 config.default_domain = 'WSL:Ubuntu'
 config.default_prog = { 'wsl.exe', '-d', 'Ubuntu' }
+config.term = 'xterm-256color'
 
 config.term = 'xterm-256color'
 -- Nightfly color scheme
@@ -55,6 +56,7 @@ config.window_background_opacity = 1.0
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.enable_csi_u_key_encoding = false
+config.bold_brightens_ansi_colors = true
 
 -- Mouse copy on select
 config.mouse_bindings = {
