@@ -11,6 +11,7 @@ local act = wezterm.action
 config.default_domain = 'WSL:Ubuntu'
 config.default_prog = { 'wsl.exe', '-d', 'Ubuntu' }
 
+config.term = 'xterm-256color'
 -- Nightfly color scheme
 config.colors = {
 	foreground = '#c3ccdc',
