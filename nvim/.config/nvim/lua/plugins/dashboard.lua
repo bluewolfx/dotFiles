@@ -6,16 +6,6 @@ return {
 			sources = {
 				files = {
 					hidden = true,
-					cmd = (function()
-						local os = vim.loop.os_uname().sysname
-						if os == "Windows_NT" then
-							return "cmd /c dir /s /b"
-						elseif os ~= "Darwin" then
-							if vim.fn.executable("fd") == 1 then return "fd --type f" end
-							if vim.fn.executable("rg") == 1 then return "rg --files" end
-						end
-						return nil
-					end)(),
 				},
 			},
 		},
