@@ -14,7 +14,7 @@ return {
 		sources = {
 			default = { 'copilot', 'lsp', 'path', 'snippets', 'buffer' },
 			per_filetype = {
-				sql = { 'snippets', 'dadbod', 'buffer' },
+				sql = { 'dadbod', 'snippets', 'buffer' },
 				lua = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
 			},
 			providers = {
@@ -28,7 +28,8 @@ return {
 					module = "blink-copilot",
 					score_offset = 100,
 					async = true,
-				}
+				},
+				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" }
 
 
 			},
@@ -38,7 +39,8 @@ return {
 	opts_extend = { "sources.default" },
 	dependencies = {
 		"rafamadriz/friendly-snippets",
-		{ "folke/lazydev.nvim",    ft = { 'lua' }, lazy = true },
+		{ "folke/lazydev.nvim",                   ft = { 'lua' },                   lazy = true },
+		{ 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
 		{ "fang2hou/blink-copilot" },
 	},
 }
