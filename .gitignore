@@ -38,3 +38,4 @@ zsh/.config/zsh/.zsh_work
 zsh/.config/zsh/.zcompdump*
 zsh/.config/zsh/.zprofile
 zsh/.config/zsh/.zshrc.pre-oh-my-zsh
+zsh/.config/zsh/.zsh_history
