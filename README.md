@@ -49,6 +49,9 @@ stow -d "$HOME" -D */
 - `nvim` - Neovim text editor
 - `wezterm` - WezTerm terminal emulator
 - `zsh` - Zsh shell configuration
+- `powershell` - PowerShell profile and configuration
+- `tmux` - tmux configuration
+- `brew` - Homebrew Bundle (Brewfile) for CLI tools and apps
 
 ### Requirements
 
@@ -59,4 +62,15 @@ stow -d "$HOME" -D */
 - [direnv](https://direnv.net/) (for the `direnv` directory)
 - [Kitty](https://sw.kovidgoyal.net/kitty/) or [WezTerm](https://wezfurlong.org/wezterm/) (for terminal configurations)
 - [Karabiner-Elements](https://karabiner-elements.pqrs.org/) (for the `karabiner` directory, macOS only)
+- [Homebrew](https://brew.sh/) (for the `brew` directory/Brewfile)
+- [PowerShell](https://github.com/PowerShell/PowerShell) (for the `powershell` directory)
+- [tmux](https://github.com/tmux/tmux) (for the `tmux` directory)
+
+### Homebrew bundle
+
+To install packages from the Brewfile:
+
+```sh
+brew bundle --file=brew/Brewfile
+```
 
