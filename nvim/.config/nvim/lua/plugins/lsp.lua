@@ -42,7 +42,11 @@ return {
 
 			require("mason").setup({})
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "gopls", "marksman", "yamlls", "jsonls", "dockerls", "pyright" },
+				ensure_installed = { "lua_ls", "gopls", "marksman", "markdown_oxide", "yamlls", "jsonls", "dockerls", "pyright" },
+			})
+			
+			vim.lsp.config("markdown_oxide", {
+				capabilities = lsp_zero.get_capabilities(),
 			})
 		end,
 	},
