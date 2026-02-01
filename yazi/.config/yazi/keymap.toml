@@ -1,5 +1,5 @@
 [mgr]
 prepend_keymap = [
-    { on = [ "g", "l" ], run = """ shell 'for f in "$@"; do mv "$f" "$(echo "$f" | tr "[:upper:]" "[:lower:]")"; done' --confirm """, desc = "Lowercase" },
-    { on = [ "g", "_" ], run = """ shell 'for f in "$@"; do mv "$f" "$(echo "$f" | sed "s/ /_/g")"; done' --confirm """, desc = "Snake_case (spaces to _)" }
+    { on = [ "g", "l" ], run = """ shell 'for f in "$@"; do new_name=$(echo "${f##*/}" | tr "[:upper:]" "[:lower:]"); mv -v "$f" "${f%/*}/$new_name"; done' --confirm """, desc = "Lowercase" },
+    { on = [ "g", "s" ], run = """ shell 'for f in "$@"; do new_name=$(echo "${f##*/}" | sed "s/ /_/g"); mv -v "$f" "${f%/*}/$new_name"; done' --confirm """, desc = "Snake_case" }
 ]
