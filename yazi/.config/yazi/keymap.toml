@@ -1,0 +1,5 @@
+[mgr]
+prepend_keymap = [
+    { on = [ "g", "l" ], run = """ shell 'for f in "$@"; do mv "$f" "$(echo "$f" | tr "[:upper:]" "[:lower:]")"; done' --confirm """, desc = "Lowercase" },
+    { on = [ "g", "_" ], run = """ shell 'for f in "$@"; do mv "$f" "$(echo "$f" | sed "s/ /_/g")"; done' --confirm """, desc = "Snake_case (spaces to _)" }
+]
