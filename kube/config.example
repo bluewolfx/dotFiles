@@ -1,0 +1,20 @@
+# ~/.kube/config example
+apiVersion: v1
+clusters:
+- cluster:
+    server: https://your-cluster-endpoint
+    certificate-authority-data: BASE64_CA_CERT
+  name: your-cluster
+contexts:
+- context:
+    cluster: your-cluster
+    user: your-user
+    namespace: default
+  name: your-context
+current-context: your-context
+kind: Config
+preferences: {}
+users:
+- name: your-user
+  user:
+    token: YOUR_K8S_TOKEN
