@@ -1,0 +1,11 @@
+# ~/.aws/config example
+[default]
+region = us-east-1
+output = json
+
+# Example profile
+[profile company]
+region = eu-west-1
+output = json
+role_arn = arn:aws:iam::123456789012:role/YourRole
+source_profile = default

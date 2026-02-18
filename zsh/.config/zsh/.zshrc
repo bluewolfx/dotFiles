@@ -56,6 +56,7 @@ thefuck
 web-search
 jsontools
 fzf-tab
+sudo
 )
 
 source $ZSH/oh-my-zsh.sh

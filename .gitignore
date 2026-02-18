@@ -41,3 +41,6 @@ zsh/.config/zsh/.zshrc.pre-oh-my-zsh
 zsh/.config/zsh/.zsh_history
 kube/.kube/cache/*
 kube/.kube/config-files/truphone.yml
+.kube/config
+.aws/config
+.aws/credentials
