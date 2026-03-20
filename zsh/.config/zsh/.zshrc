@@ -134,6 +134,13 @@ esac
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$(go env GOPATH)/bin"
 
+
+# edit command buffer 
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
+
+
 if command -v zoxide &> /dev/null; then
     eval "$(zoxide init --cmd cd zsh)"
 fi
