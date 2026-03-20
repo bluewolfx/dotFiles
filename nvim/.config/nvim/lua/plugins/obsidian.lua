@@ -10,11 +10,11 @@ return {
 		workspaces = {
 			{
 				name = "personal",
-				path = "~/obsidian-repo/Banon",
+				path = "~/obsidian-repo/personal",
 			},
 			{
 				name = "work",
-				path = "~/obsidian-repo/1Global",
+				path = "~/obsidian-repo/professional",
 			},
 		},
 		ui = {

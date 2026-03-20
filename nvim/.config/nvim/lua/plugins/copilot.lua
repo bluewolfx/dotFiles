@@ -9,7 +9,7 @@ return {
 				auto_trigger = true,
 			},
 			panel = {
-				enabled = true,
+				enabled = false,
 			},
 			filetypes = {
 				["*"] = true,
