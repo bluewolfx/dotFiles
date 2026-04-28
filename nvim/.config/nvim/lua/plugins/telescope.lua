@@ -26,9 +26,9 @@ return {
 
 			},
 		}
-		if vim.fn.has("win32") == 1 then
-			defaults.preview = { treesitter = false }
-		end
+		-- treesitter preview is disabled due to API changes in Neovim 0.12.x;
+		-- re-enable once nvim-treesitter is updated and stable.
+		defaults.preview = { treesitter = false }
 		-- Prefer ripgrep; fallback to fd
 		local find_cmd
 		if vim.fn.executable("rg") == 1 then

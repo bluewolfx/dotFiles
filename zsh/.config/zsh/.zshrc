@@ -151,3 +151,15 @@ fi
 
 [ -f $ZDOTDIR/.zsh_secrets ] && source $ZDOTDIR/.zsh_secrets
 [ -f $ZDOTDIR/.zsh_work ] && source $ZDOTDIR/.zsh_work
+
+
+# K9s autologin
+k9s() {
+    aws sts get-caller-identity --profile "programmable-network-staging" &> /dev/null || aws sso login --profile "programmable-network-staging"
+    aws sts get-caller-identity --profile "programmable-network-production" &> /dev/null || aws sso login --profile "programmable-network-production"
+    aws sts get-caller-identity --profile "operations-staging" &> /dev/null || aws sso login --profile "operations-staging"
+    aws sts get-caller-identity --profile "operations-production" &> /dev/null || aws sso login --profile "operations-production"
+    command k9s
+}
+
+ 
