@@ -24,11 +24,11 @@ return {
 					opts("Workspace symbols"))
 				vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts("Diagnostics"))
 				vim.keymap.set("n", "[d", function()
-						vim.diagnostic.jump({ diagnostic = vim.diagnostic.get_prev() })
+						vim.diagnostic.jump({ count = -1 })
 					end,
 					opts("Previous diagnostic"))
 				vim.keymap.set("n", "]d", function()
-					vim.diagnostic.jump({ diagnostic = vim.diagnostic.get_next() })
+					vim.diagnostic.jump({ count = 1 })
 				end, opts("Next diagnostic"))
 
 				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts("Rename"))
