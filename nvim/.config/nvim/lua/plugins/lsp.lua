@@ -17,7 +17,6 @@ return {
 
 				vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts("Definition"))
 				vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts("Implementation"))
-				vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts("References"))
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts("Documentation"))
 
 				vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol,
