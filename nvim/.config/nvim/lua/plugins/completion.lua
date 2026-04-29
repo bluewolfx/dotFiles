@@ -40,7 +40,11 @@ return {
 	dependencies = {
 		"rafamadriz/friendly-snippets",
 		{ "folke/lazydev.nvim",                   ft = { 'lua' },                   lazy = true },
-		{ 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+		{ 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true,
+			init = function()
+				vim.g.vim_dadbod_completion_auto_setup = 0
+			end,
+		},
 		{ "fang2hou/blink-copilot" },
 	},
 }
