@@ -1,4 +1,6 @@
 vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "q", "<nop>")        -- prevent accidental macro recording (double-q used as ESC on Cheapino v2)
+vim.keymap.set("n", "<leader>q", "q")    -- intentional macro recording via leader
 vim.keymap.set("n", "q:", "<nop>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

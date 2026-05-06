@@ -9,18 +9,46 @@ return {
 			pane_gap = 1,
 			preset = {
 				keys = {
-					{ icon = " ", key = "f", desc = "Find File", action = function() Snacks.picker
-						    .files({ hidden = true }) end },
-					{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-					{ icon = " ", key = "g", desc = "Find Text", action = function() Snacks.picker
-						    .grep({ hidden = true }) end },
-					{ icon = " ", key = "r", desc = "Recent Files", action = function() Snacks
-						    .picker.recent() end },
-					{ icon = " ", key = "c", desc = "Config", action = function() Snacks.picker
-						    .files({ cwd = vim.fn.stdpath("config"), hidden = true }) end },
-					{ icon = " ", key = "s", desc = "Restore Session", section = "session" },
+					{
+						icon = " ",
+						key = "f",
+						desc = "Find File",
+						action = function()
+							Snacks.picker
+							    .files({ hidden = true })
+						end
+					},
+					{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+					{
+						icon = " ",
+						key = "g",
+						desc = "Find Text",
+						action = function()
+							Snacks.picker
+							    .grep({ hidden = true })
+						end
+					},
+					{
+						icon = " ",
+						key = "r",
+						desc = "Recent Files",
+						action = function()
+							Snacks
+							    .picker.recent()
+						end
+					},
+					{
+						icon = " ",
+						key = "c",
+						desc = "Config",
+						action = function()
+							Snacks.picker
+							    .files({ cwd = vim.fn.stdpath("config"), hidden = true })
+						end
+					},
+					{ icon = " ", key = "s", desc = "Restore Session", section = "session" },
 					{ icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy" },
-					{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
+					{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 				},
 			},
 			sections = {
