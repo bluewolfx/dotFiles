@@ -14,8 +14,7 @@ return {
 						key = "f",
 						desc = "Find File",
 						action = function()
-							Snacks.picker
-							    .files({ hidden = true })
+							Snacks.picker.files({ hidden = true })
 						end
 					},
 					{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
@@ -24,8 +23,7 @@ return {
 						key = "g",
 						desc = "Find Text",
 						action = function()
-							Snacks.picker
-							    .grep({ hidden = true })
+							Snacks.picker.grep({ hidden = true })
 						end
 					},
 					{
@@ -33,8 +31,7 @@ return {
 						key = "r",
 						desc = "Recent Files",
 						action = function()
-							Snacks
-							    .picker.recent()
+							Snacks.picker.recent()
 						end
 					},
 					{
@@ -42,8 +39,7 @@ return {
 						key = "c",
 						desc = "Config",
 						action = function()
-							Snacks.picker
-							    .files({ cwd = vim.fn.stdpath("config"), hidden = true })
+							Snacks.picker.files({ cwd = vim.fn.stdpath("config"), hidden = true })
 						end
 					},
 					{ icon = " ", key = "s", desc = "Restore Session", section = "session" },
@@ -89,8 +85,8 @@ return {
 	},
 	keys = {
 		{ "<leader>gg",  function() Snacks.lazygit() end,                                       desc = "Lazygit" },
-		{ "<leader>pf",  function() Snacks.picker.files({ hidden = true }) end,                 desc = "Snacks.Picker project files" },
-		{ "<leader>ff",  function() Snacks.picker.git_files({ hidden = true }) end,             desc = "Snacks.Picker git files" },
+		{ "<leader>pf",  function() Snacks.picker.files({ hidden = true, ignored = true }) end,  desc = "Snacks.Picker project files" },
+		{ "<leader>ff",  function() Snacks.picker.git_files() end,                               desc = "Snacks.Picker git files" },
 		{ "<leader>fg",  function() Snacks.picker.grep() end,                                   desc = "Snacks.Picker live grep" },
 		{ "<leader>fh",  function() Snacks.picker.help() end,                                   desc = "Snacks.Picker search help" },
 		{ "<leader>fb",  function() Snacks.picker.buffers() end,                                desc = "Snacks.Picker search buffers" },

@@ -61,6 +61,9 @@ sudo
 
 source $ZSH/oh-my-zsh.sh
 
+# Show full path on the right side of the prompt
+RPROMPT='%F{240}%3~%f'
+
 export LANG=en_US.UTF-8
 export EDITOR='nvim'
 
@@ -80,6 +83,7 @@ alias dockerUBuild="docker-compose up -d --build"
 alias bi="brew install"
 alias ld="lazydocker"
 alias lg="lazygit"
+alias ljj="lazyjj"
 alias l='eza -l --icons --git --header --group-directories-first'
 alias lt='eza --tree --level=2 --icons'
 
@@ -162,4 +166,5 @@ k9s() {
     command k9s
 }
 
- 
+# jj (jujutsu) completions
+source <(jj util completion zsh)
