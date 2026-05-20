@@ -168,3 +168,8 @@ k9s() {
 
 # jj (jujutsu) completions
 source <(jj util completion zsh)
+
+if command -v starship &> /dev/null; then
+    export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+    eval "$(starship init zsh)"
+fi
