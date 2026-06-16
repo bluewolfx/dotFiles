@@ -2,8 +2,8 @@ return {
 	"folke/drop.nvim",
 	opts = {
 		theme = "matrix",
-		filetypes = { "snacks_dashboard" },
+		filetypes = { "dashboard", "snacks_dashboard" },
 		screensaver = 1000 * 60 * 2,
-		max = 6000,
+		max = 2500,
 	}
 }
