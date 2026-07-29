@@ -1,0 +1,7 @@
+theme: galaxy
+focus:
+  on_startup: collection
+collection_browser:
+  show_on_startup: true
+watch_collection_files: true
+watch_env_files: true

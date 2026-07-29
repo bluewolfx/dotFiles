@@ -51,6 +51,7 @@ return {
 			vim.keymap.set("n", "<leader>gw", ":Git blame<CR>", { desc = "Git blame window" })
 		end,
 	},
+	{ "rhysd/conflict-marker.vim", lazy = false },
 	{
 		"juacker/git-link.nvim",
 		lazy = true,

@@ -14,7 +14,7 @@ return {
 		sources = {
 			default = { 'copilot', 'lsp', 'path', 'snippets', 'buffer' },
 			per_filetype = {
-				sql = { 'dadbod', 'snippets', 'buffer' },
+				sql = { 'dadbod', 'copilot', 'snippets', 'buffer' },
 				lua = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
 			},
 			providers = {

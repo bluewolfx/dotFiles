@@ -44,3 +44,5 @@ kube/.kube/config-files/truphone.yml
 .kube/config
 .aws/config
 .aws/credentials
+
+.jj/

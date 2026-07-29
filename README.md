@@ -1,5 +1,4 @@
-Set correct modeline for0
- ## Dotfiles
+## Dotfiles
 
 This repo contains all my dotfiles. I use [GNU Stow](https://www.gnu.org/software/stow/) to manage them.
 
@@ -44,6 +43,7 @@ stow -d "$HOME" -D */
 ### Included Configurations
 
 - `direnv` - Directory-specific environment variables
+- `jj` - Jujutsu (jj) VCS configuration
 - `karabiner` - Karabiner-Elements keyboard customization (macOS)
 - `kitty` - Kitty terminal emulator
 - `nvim` - Neovim text editor
@@ -73,4 +73,22 @@ To install packages from the Brewfile:
 ```sh
 brew bundle --file=brew/Brewfile
 ```
+
+To regenerate the Brewfile from what's currently installed:
+
+```sh
+brew bundle dump --file=brew/Brewfile --force
+```
+
+### Secrets
+
+Secrets are kept out of this repo. Copy the example files and fill them in:
+
+```sh
+cp zsh/.config/zsh/.zsh_secrets.example zsh/.config/zsh/.zsh_secrets
+```
+
+`.zsh_secrets` (gitignored, sourced by `.zshrc`) holds tokens plus the `jj`
+identity — set `JJ_USER` and `JJ_EMAIL` there so they stay out of the tracked
+`jj/config.toml`.
 

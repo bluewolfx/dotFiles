@@ -4,6 +4,6 @@ return {
 		theme = "matrix",
 		filetypes = { "dashboard", "snacks_dashboard" },
 		screensaver = 1000 * 60 * 2,
-		max = 2500,
+		max = 500,
 	}
 }

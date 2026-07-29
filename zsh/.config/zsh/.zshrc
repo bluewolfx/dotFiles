@@ -166,6 +166,24 @@ k9s() {
     command k9s
 }
 
+# Posting (HTTP TUI) launcher.
+# `posting`            -> opens the hive-posting-collections repo
+# `posting <dir>`      -> opens another collection repo
+# In both cases posting.env (committed) and secrets.env (gitignored) are auto-loaded.
+# Real subcommands (import/locate/sponsors/--help) are passed straight through.
+posting() {
+    case "$1" in
+        import|locate|sponsors|--help|-h) command posting "$@"; return ;;
+    esac
+    local collection="$HOME/projects/prognet/hive-posting-collections"
+    # a non-flag first arg overrides the collection dir
+    if [ -n "$1" ] && [ "${1#-}" = "$1" ]; then collection="$1"; shift; fi
+    local -a env_args
+    [ -f "$collection/posting.env" ] && env_args+=(-e "$collection/posting.env")
+    [ -f "$collection/secrets.env" ] && env_args+=(-e "$collection/secrets.env")
+    command posting default -c "$collection" "${env_args[@]}" "$@"
+}
+
 # jj (jujutsu) completions
 source <(jj util completion zsh)
 

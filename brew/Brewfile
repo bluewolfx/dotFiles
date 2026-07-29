@@ -1,59 +1,150 @@
-tap "derailed/k9s"
-tap "deviceinsight/packages"
+tap "barutsrb/tap", "https://github.com/BarutSRB/homebrew-tap", trusted: true
+tap "derailed/k9s", trusted: true
+tap "deviceinsight/packages", trusted: true
 tap "homebrew/services"
-tap "jesseduffield/lazygit"
-tap "nikitabobko/tap"
-tap "osx-cross/arm"
-tap "osx-cross/avr"
-tap "qmk/qmk"
+tap "jesseduffield/lazygit", trusted: true
+tap "nikitabobko/tap", trusted: true
+tap "osx-cross/arm", trusted: true
+tap "osx-cross/avr", trusted: true
+tap "qmk/qmk", trusted: true
+tap "tonisives/tap", trusted: true
+# Automate deployment, configuration, and upgrading
 brew "ansible"
+# Official Amazon AWS command-line interface
 brew "awscli"
+# Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
+# Load/unload environment variables based on $PWD
 brew "direnv"
+# Pack, ship and run any application as a lightweight container
 brew "docker"
+# Isolated development environments using Docker
 brew "docker-compose"
+# Modern, maintained replacement for ls
 brew "eza"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
+# Tool to install, manage and use Progressive Web Apps in Mozilla Firefox
 brew "firefoxpwa"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# GitHub command-line tool
 brew "gh"
+# Distributed revision control system
 brew "git"
+# Extensions to follow Vincent Driessen's branching model
 brew "git-flow"
+# Open-source GitLab command-line tool
+brew "glab"
+# Render markdown on the CLI
+brew "glow"
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Fast linters runner for Go
 brew "golangci-lint"
+# Language server for the Go language
 brew "gopls"
+# Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# Review-first terminal diff viewer for agent-authored changesets
+brew "hunk"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# Git-compatible distributed version control system
 brew "jj"
+# CLI for managing Apache Kafka
 brew "kafkactl"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
+# Lazier way to manage everything docker
 brew "lazydocker"
+# Simple terminal UI for git commands
 brew "lazygit"
-brew "mockery"
+# TUI for Jujutsu/jj
+brew "lazyjj"
+# Syntax-aware git merge driver
+brew "mergiraf"
+# Open-source, cross-platform JavaScript runtime environment
 brew "node"
+# CLI for Mermaid library
+brew "mermaid-cli"
+# Mock code autogenerator for Golang
+brew "mockery"
+# MongoDB Shell to connect, configure, query, and work with your MongoDB database
 brew "mongosh"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Draw UML diagrams
+brew "plantuml"
+# Object-relational database system
 brew "postgresql@14"
+# Command-line shell and scripting language
+brew "powershell", link: false
+# Protocol buffers (Google's data interchange format)
 brew "protobuf"
+# Docker and OCI Registry Client in Go and tooling using those libraries
+brew "regclient"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Non-interactive SSH password auth
 brew "sshpass"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Very fast implementation of tldr in Rust
 brew "tealdeer"
+# Programmatically correct mistyped console commands
 brew "thefuck"
+# TCP proxy to simulate network & system conditions for chaos & resiliency testing
 brew "toxiproxy", restart_service: :changed
+# Parser generator tool
+brew "tree-sitter-cli"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
+# Shell extension to navigate your filesystem faster
 brew "zoxide"
+# Kubernetes CLI To Manage Your Clusters In Style!
 brew "derailed/k9s/k9s"
+# Quantum Mechanical Keyboard (QMK) Firmware
 brew "qmk/qmk/qmk"
+# Command-line interface for 1Password
+cask "1password-cli"
+# AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
+# Automatic tiling window manager similar to xmonad
 cask "amethyst"
+# Terminal-based AI coding assistant
+cask "claude-code"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
+# Brings the power of Copilot coding agent directly to your terminal
+cask "copilot-cli"
+cask "font-jetbrains-mono-nerd-font"
+# Intercept, modify, replay, save HTTP/S traffic
 cask "mitmproxy"
+# Simple application that will prevent iTunes or Apple Music from launching
 cask "notunes"
+# Tiling window manager for macOS with Niri-inspired column-based layout
+cask "barutsrb/tap/omniwm"
+# System-wide Vim mode
+cask "tonisives/tap/ovim"
 cask "powershell"
+# App that enables mouse-free UI interaction
 cask "shortcat"
+# JDK from the Eclipse Foundation (Adoptium)
 cask "temurin"
+# Menu bar utility for viewing and switching Spaces
 cask "whichspace"
+# YouTube music client
 cask "ytmdesktop-youtube-music"
 go "golang.org/x/tools/cmd/callgraph"
 go "github.com/go-delve/delve/cmd/dlv"
@@ -72,12 +163,14 @@ go "golang.org/x/tools/cmd/gonew"
 go "golang.org/x/tools/gopls"
 go "github.com/cweill/gotests/gotests"
 go "gotest.tools/gotestsum"
-go "golang.org/x/vuln/cmd/govulncheck
+go "golang.org/x/vuln/cmd/govulncheck"
 go "github.com/koron/iferr"
 go "github.com/josharian/impl"
 go "github.com/tmc/json-to-struct"
 go "github.com/fgrosse/kafkactl"
 go "github.com/jesseduffield/lazydocker"
+go "github.com/AlexanderGrooff/mermaid-ascii"
+go "git.truphone.net/programmable-network/message-storage-service"
 go "github.com/golang-migrate/migrate/v4/cmd/migrate"
 go "go.uber.org/mock/mockgen"
 go "github.com/google/pprof"
@@ -85,3 +178,4 @@ go "google.golang.org/protobuf/cmd/protoc-gen-go"
 go "google.golang.org/grpc/cmd/protoc-gen-go-grpc"
 go "github.com/kyoh86/richgo"
 go "honnef.co/go/tools/cmd/staticcheck"
+uv "posting"

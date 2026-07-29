@@ -1,0 +1,17 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[ui]
+default-command = "log"
+diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
+diff-instructions = false
+merge-editor = "nvim-conflict"
+conflict-marker-style = "git"
+
+[merge-tools.nvim-conflict]
+program = "nvim"
+merge-args = ["$output"]
+merge-tool-edits-conflict-markers = true
+
+[aliases]
+hdiff = ["diff", "--config=ui.pager=[\"hunk\",\"pager\"]"]
+hshow = ["show", "--config=ui.pager=[\"hunk\",\"pager\"]"]
